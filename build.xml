@@ -1,0 +1,11 @@
+<project name="promise-as3" basedir="." default="buildSWC">
+	<property file="build.properties"/>
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	
+	<target name="buildSWC">
+		<compc output="${basedir}/swc/${ant.project.name}.swc">
+			<source-path path-element="${basedir}/src" />
+			<include-sources dir="${basedir}/src" includes="**/*.as" />
+		</compc>
+	</target>
+</project>
